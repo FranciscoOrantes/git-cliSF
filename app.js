@@ -114,8 +114,8 @@ inquirer.prompt([
                 
                     }).then(answer => {
                         console.log(answer)
-                        shell.exec('git remote add origin ' + ' ' + answer.Create)
-                        shell.exec('git push -u origin master ');
+                        shell.exec('sudo git remote add origin ' + ' ' + answer.Create)
+                        shell.exec('sudo git push -u origin master ');
             
                       
                     });
