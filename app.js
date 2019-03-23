@@ -59,7 +59,7 @@ inquirer.prompt([
             crearRepo()
        
                 }if(answers.list==2){
-                    whois()
+                   clonarRepo()
                 }if(answers.list==3){
                     wget()
                 }
@@ -128,6 +128,24 @@ inquirer.prompt([
        
         
         
+    }
+    function clonarRepo(){
+       var ruta = " "
+        inquirer.prompt({
+            name:'Clonar',
+            type:'input',
+            message:'Ingresa el directorio en donde quieres clonar tu repositorio de github'
+        }).then(answer => {
+            ruta = answer.Clonar
+            console.log(ruta)
+            inquirer.prompt({
+               name:'urlClonar',
+               type:'input',
+               message:'Ingresa la url del repositorio en github'
+           }).then(answer => {
+               shell.exec('sudo ' + ' ' + 'git clone ' + answer.urlClonar + ' ' + ruta )
+           }) 
+        })
     }
     
     
